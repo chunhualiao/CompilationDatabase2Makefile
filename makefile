@@ -9,7 +9,8 @@ check: makefile-bt.diff \
     makefile-amrx.diff \
     makefile-amrx-rose.diff \
     makefile-amrx-autoPar.diff \
-    makefile-amrx-autoPar-opt.diff
+    makefile-amrx-autoPar-opt.diff \
+    makefile-callgraph.diff
 
 # test default translation
 # ------------------------------------------------------------
