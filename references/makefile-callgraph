@@ -1,0 +1,11 @@
+# this is an automatically generated makefile
+default: all
+/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot:/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c
+	cd /home/ubuntu/workspace/large-single-compilation-unit-c-programs; buildCallGraph -c bzip2.c -o bzip2.c_callGraph.dot
+/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.pdf:/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot
+	cd /home/ubuntu/workspace/large-single-compilation-unit-c-programs; dot -Tpdf bzip2.c_callGraph.dot -o bzip2.c_callGraph.dot.pdf
+/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.png:/home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot
+	cd /home/ubuntu/workspace/large-single-compilation-unit-c-programs; dot -Tpng bzip2.c_callGraph.dot -o bzip2.c_callGraph.dot.png
+all :  /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.pdf /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.png
+clean:
+	rm  /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.pdf /home/ubuntu/workspace/large-single-compilation-unit-c-programs/bzip2.c_callGraph.dot.png

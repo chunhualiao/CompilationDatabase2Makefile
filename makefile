@@ -45,6 +45,15 @@ makefile-amrx-autoPar-opt: cdb2makefile
 
 makefile-amrx-autoPar-opt.diff: makefile-amrx-autoPar-opt
 	if diff $< references/$< > $@ ; then echo "Test Passed" ; else echo "Files differ; test failed"; cat $@; rm -rf $@; exit 1; fi
+# test the keep_same_input_entry option: keep entries with same input file
+# ------------------------------------------------------------
+makefile-callgraph: cdb2makefile
+	./cdb2makefile --keep_same_input_entry --input="tests/callgraph.json" --output=$@
+
+makefile-callgraph.diff: makefile-callgraph
+	if diff $< references/$< > $@ ; then echo "Test Passed" ; else echo "Files differ; test failed"; cat $@; rm -rf $@; exit 1; fi
+
+
 #
 #
 #check: cdb2makefile

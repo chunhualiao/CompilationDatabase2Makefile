@@ -1,0 +1,39 @@
+[
+{
+    "arguments": [
+      "buildCallGraph",
+      "-c",
+      "bzip2.c",
+      "-o", 
+      "bzip2.c_callGraph.dot"
+    ],
+    "tool_directory": "/home/ubuntu/opt/rose_inst/bin", 
+    "directory":"/home/ubuntu/workspace/large-single-compilation-unit-c-programs",
+    "file":"bzip2.c"
+},
+{
+    "arguments": [
+      "dot",
+      "-Tpdf",
+      "bzip2.c_callGraph.dot",
+      "-o", 
+      "bzip2.c_callGraph.dot.pdf"
+    ],
+    "tool_directory": "/home/ubuntu/opt/rose_inst/bin", 
+    "directory":"/home/ubuntu/workspace/large-single-compilation-unit-c-programs",
+    "file":"bzip2.c_callGraph.dot"
+},
+{
+    "arguments": [
+      "dot",
+      "-Tpng",
+      "bzip2.c_callGraph.dot",
+      "-o", 
+      "bzip2.c_callGraph.dot.png"
+    ],
+    "tool_directory": "/home/ubuntu/opt/rose_inst/bin", 
+    "directory":"/home/ubuntu/workspace/large-single-compilation-unit-c-programs",
+    "file":"bzip2.c_callGraph.dot"
+}
+]
+

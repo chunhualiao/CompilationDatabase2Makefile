@@ -20,6 +20,8 @@ string j_file_name="compile_commands.json";
 string mkfile_name="makefile-default";
 string compiler_name="identityTranslator"; // replace the compiler with another one, identityTranslator as the default new compiler
 string add_options=""; // additional options to add
+bool keepSameSourceFileEntry=false; 
+// the translator skips json entry processing the same input file by default, sometimes we want to keep them
 
 bool replaceCompiler= false;
 
@@ -49,6 +51,12 @@ static int parse_opt (int key, char* arg, struct argp_state * state)
         }
         break;
       }
+   case 'k':
+      {
+        keepSameSourceFileEntry= true;
+        break;
+      }
+ 
    case 'c':
       {
         // arg stores the parsed value followed after the option
@@ -91,6 +99,7 @@ int main(int argc, char** argv)
     {"input", 'i', "String", OPTION_ARG_OPTIONAL, "input file name of compilation database json file, default name if not provided: compile_commands.json"},
     {"output", 'o', "String", OPTION_ARG_OPTIONAL, "output file name for the generated makefile, default name if not provided: makefile-default"},
     {"compiler", 'c', "String", OPTION_ARG_OPTIONAL, "replace the compiler with a new compiler command, default replacement compiler name if not provided: identityTranslator"},
+    {"keep_same_input_entry", 'k', 0, OPTION_ARG_OPTIONAL, "keep entries using the same input file. default is to skip redundant entries processing same input file"},
     // must provide values for this option
     {"add_options", 'a', "String", 0, "add additional compiler options to command lines"},
     {0}
@@ -164,7 +173,7 @@ int main(int argc, char** argv)
 
     // Somehow Bear generates a database file with duplicated entries
     // we have to skip them. 
-    if (visited[fullfilename]!=true)
+    if (keepSameSourceFileEntry || (visited[fullfilename]!=true))
     {
       //cout<< "--------"+ dir_str+"/"+filename_str <<endl;
 
